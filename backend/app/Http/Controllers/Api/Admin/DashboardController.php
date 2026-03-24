@@ -27,8 +27,8 @@ class DashboardController extends Controller
 
         $monthlySales = Order::whereIn('status', ['confirmed', 'preparing', 'completed'])
             ->select(
-                DB::raw('MONTH(created_at) as month'),
-                DB::raw('YEAR(created_at) as year'),
+                DB::raw("CAST(strftime('%m', created_at) AS INTEGER) as month"),
+                DB::raw("CAST(strftime('%Y', created_at) AS INTEGER) as year"),
                 DB::raw('SUM(total_amount) as total'),
                 DB::raw('COUNT(*) as count')
             )
