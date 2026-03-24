@@ -427,6 +427,25 @@ input, textarea, select { font-family: inherit; }
 .form-group.checkbox input { width: 18px; height: 18px; accent-color: var(--accent); }
 .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
 
+/* Image Upload */
+.image-upload-area { display: flex; flex-direction: column; align-items: center; }
+.image-upload-placeholder {
+  width: 100%; padding: 28px 16px; border: 2px dashed var(--border); border-radius: var(--radius);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;
+  color: var(--text-muted); transition: var(--transition); background: var(--bg-primary);
+}
+.image-upload-placeholder:hover { border-color: var(--accent); color: var(--accent); background: rgba(255, 107, 53, 0.04); }
+.image-upload-hint { font-size: 0.75rem; opacity: 0.7; }
+.image-preview-container { position: relative; width: 100%; max-width: 240px; }
+.image-preview { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--border); }
+.image-remove-btn {
+  position: absolute; top: 6px; right: 6px; width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7); color: white; display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; transition: var(--transition); border: none; cursor: pointer;
+}
+.image-remove-btn:hover { background: var(--red); }
+.btn-sm { padding: 6px 14px !important; font-size: 0.8rem !important; }
+
 /* ================================================
    ADMIN REPORTS
    ================================================ */
