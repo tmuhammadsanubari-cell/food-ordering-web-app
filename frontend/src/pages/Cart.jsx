@@ -2,6 +2,7 @@ import { useCart } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import { FiMinus, FiPlus, FiTrash2, FiShoppingBag } from 'react-icons/fi';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 export default function Cart() {
   const { items, updateQuantity, removeItem, totalPrice, totalItems } = useCart();
 
@@ -31,7 +32,7 @@ export default function Cart() {
             <div key={item.product_id} className="cart-item">
               <div className="cart-item-image">
                 {item.product.image ? (
-                  <img src={`http://localhost:8000/storage/${item.product.image}`} alt={item.product.name} />
+                  <img src={`${API_URL}/storage/${item.product.image}`} alt={item.product.name} />
                 ) : (
                   <div className="item-placeholder">🍽️</div>
                 )}

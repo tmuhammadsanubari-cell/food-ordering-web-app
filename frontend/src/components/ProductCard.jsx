@@ -3,6 +3,8 @@ import { FiPlus, FiStar } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
 
@@ -21,7 +23,7 @@ export default function ProductCard({ product }) {
     <Link to={`/products/${product.id}`} className="product-card">
       <div className="product-image">
         {product.image ? (
-          <img src={`http://localhost:8000/storage/${product.image}`} alt={product.name} />
+          <img src={`${API_URL}/storage/${product.image}`} alt={product.name} />
         ) : (
           <div className="product-placeholder">🍽️</div>
         )}

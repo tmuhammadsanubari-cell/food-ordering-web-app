@@ -6,6 +6,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { FiStar, FiShoppingCart, FiMinus, FiPlus } from 'react-icons/fi';
 import toast from 'react-hot-toast';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -49,7 +50,7 @@ export default function ProductDetail() {
       <div className="detail-grid">
         <div className="detail-image">
           {product.image ? (
-            <img src={`http://localhost:8000/storage/${product.image}`} alt={product.name} />
+            <img src={`${API_URL}/storage/${product.image}`} alt={product.name} />
           ) : (
             <div className="detail-placeholder">🍽️</div>
           )}
