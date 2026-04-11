@@ -54,7 +54,7 @@ export default function Login() {
         <div className="demo-credentials">
           <p><strong>Demo:</strong></p>
           <p>Admin: admin@foodapp.com / password</p>
-          <p>Customer: john@example.com / password</p>
+          <p>Customer: userdemo@foodapp.com / password</p>
         </div>
       </div>
     </div>
