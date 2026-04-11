@@ -19,8 +19,12 @@ export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleLogout = async () => {
-    await logout();
-    navigate('/login');
+    const confirmLogout = window.confirm("Admin, apakah Anda yakin ingin logout?");
+  
+    if (confirmLogout) {
+      await logout();
+      navigate('/login');
+    }
   };
 
   return (

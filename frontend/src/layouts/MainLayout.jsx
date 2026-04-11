@@ -11,8 +11,12 @@ export default function MainLayout() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await logout();
-    navigate('/login');
+    const confirmLogout = window.confirm("Apakah Anda yakin ingin keluar?");
+  
+    if (confirmLogout) {
+      await logout();
+      navigate('/login');
+    }
   };
 
   return (
